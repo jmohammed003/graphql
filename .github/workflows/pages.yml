@@ -30,6 +30,13 @@ jobs:
         run: bun run build
         env:
           GITHUB_PAGES: "true"
+      - name: Verify built entry point
+        run: |
+          if grep -q '/src/main.jsx' dist/index.html; then
+            echo 'The Pages artifact contains the source entry point instead of built assets.'
+            exit 1
+          fi
+          grep -q '/graphql/assets/' dist/index.html
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
