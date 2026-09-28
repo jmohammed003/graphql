@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-      "predeploy": "bun run build",
-  "deploy": "gh-pages -d dist"
+    "predeploy": "bun run build",
+  "deploy": "gh-pages -d dist --remote deploy"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
@@ -16,7 +16,8 @@
     "react": "latest",
     "react-dom": "latest"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
   "homepage": "https://jmohammed003.github.io/graphql/"
-
 }
